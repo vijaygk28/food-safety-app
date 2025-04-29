@@ -1,0 +1,6 @@
+streamlit
+pillow
+opencv-python-headless
+groq
+python-dotenv
+google-cloud-vision
