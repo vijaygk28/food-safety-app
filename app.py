@@ -22,8 +22,17 @@ if not groq_api_key:
     st.error("❗ GROQ API Key is missing. Please set it in your .env file.")
     st.stop()
 
-# Check if the secrets are loaded correctly
+# Check if the secrets are loaded correctly and print them for debugging
 st.write(st.secrets)
+
+# Ensure the GOOGLE_CLOUD secret is available in the Streamlit secrets
+if "GOOGLE_CLOUD" not in st.secrets:
+    st.error("❗ Google Cloud secrets are missing. Please check your secrets.toml.")
+    st.stop()
+
+if "GOOGLE_APPLICATION_CREDENTIALS_JSON" not in st.secrets["GOOGLE_CLOUD"]:
+    st.error("❗ Google credentials JSON key is missing in secrets.toml.")
+    st.stop()
 
 # Google Cloud Vision API Credentials from Streamlit secrets
 google_credentials_json = st.secrets["GOOGLE_CLOUD"]["GOOGLE_APPLICATION_CREDENTIALS_JSON"]
