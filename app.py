@@ -23,7 +23,7 @@ if not groq_api_key:
     st.stop()
 
 # Google Cloud Vision API Credentials from Streamlit secrets
-google_credentials_json = st.secrets["GOOGLE_APPLICATION_CREDENTIALS_JSON"]
+google_credentials_json = st.secrets["GOOGLE_CLOUD"]["GOOGLE_APPLICATION_CREDENTIALS_JSON"]
 
 # Write the credentials to a temporary file for the Vision API client
 with open("/tmp/google-credentials.json", "w") as json_file:
