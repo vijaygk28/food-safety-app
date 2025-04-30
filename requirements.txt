@@ -4,3 +4,7 @@ opencv-python-headless
 groq
 python-dotenv
 google-cloud-vision
+numpy
+google-auth
+tesseract
+pytesseract
